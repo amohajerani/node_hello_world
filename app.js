@@ -1,14 +1,9 @@
-'use strict';
+const express = require('express');
 
-const express = require('express')
 const app = express();
 
-const port = 8080;
-const host = '0.0.0.0';
+const PORT = process.env.PORT || 8000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World from IBM Cloud Essentials!');
-})
+app.get('/',(req, res) => res.send('Hello World'));
 
-app.listen(port, host);
-console.log(`Running on http://${host}:${port}`);
+app.listen(PORT, () => console.log(`Server listening in port ${PORT}`))
